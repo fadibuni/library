@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Books Library
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Author</th>
+          <th scope="col">Pages</th>
+          <th scope="col">Read</th>
+          <th scope="col">Remove</th>
+          <th scope="col">Toggle Read</th>
+          <tbody></tbody>
+        </tr>
+      </thead>
+    </table>
+    <button command="show-modal" commandfor="my-dialog">Open dialog</button>
+
+
+    <dialog id="my-dialog">
+      <form action="" method="dialog" class="new-book-form">
+        <div class="form-group">
+          <label for="name">Enter book name:</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="form-group">
+          <label for="author">Enter book author:</label>
+          <input type="text" name="author" id="author" />
+        </div>
+        <div class="form-group">
+          <label for="pages">Enter book pages:</label>
+          <input type="text" name="pages" id="pages" />
+        </div>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="subscribe" id="read" />
+            <span>The book has been read</span>
+          </label>
+        </div>
+        <button class="new-book-form">Submit</button>
+      </form>
+      <button commandfor="my-dialog" command="close">Close</button>
+    </dialog>
+    <script src="index.js"></script>
+  </body>
+</html>

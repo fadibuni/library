@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* Force form controls to use your page's font instead of OS defaults */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+
+
+td:last-of-type {
+  text-align: center;
+}
+
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+
+tfoot th {
+  text-align: right;
+}
+
+
+tfoot td {
+  font-weight: bold;
+}
+
+
+button {
+  background-color: rgb(228 240 245);
+  font-weight: bold;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+.form-group label {
+  font-weight: 600;
+  color: #333333;
+  font-size: 0.9rem;
+}
+
+
+form input[type="text"],
+form input[type="email"],
+form select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  outline: none; /* Safely remove default outline because we provide custom :focus */
+}
+
+
+/* Interactive States */
+form input:focus,
+form select:focus {
+  border-color: #0076ff;
+  box-shadow: 0 0 0 3px rgba(0, 118, 255, 0.15);
+}
+
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+
+.checkbox-label input[type="checkbox"] {
+  accent-color: #0076ff; /* Colors the default browser checkbox */
+  width: 1.1rem;
+  height: 1.1rem;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+td > button {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #121212;
+  padding: 12px 28px;
+  cursor: pointer;
+  /* Apply a transparent border to reserve the physical space */
+  border: 3px solid transparent;
+  border-radius: 8px;
+
+
+  /* Standard smooth transition for standard properties */
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+
+td > button:hover {
+  /* Scale effect to make the button feel more interactive */
+  transform: translateY(-2px);
+
+
+  /* Dual backgrounds: Inner solid color + outer conic gradient */
+  background:
+    linear-gradient(#121212, #121212) padding-box,
+    conic-gradient(
+        from var(--angle),
+        #ff4e50,
+        #f9d423,
+        #00b4db,
+        #0083b0,
+        #ff4e50
+      )
+      border-box;
+
+
+  /* Spin the colors infinitely while the mouse is hovering */
+  animation: spin-border 2s linear infinite;
+}
+
+
+/* 4. Active/Click State (Optional Polish) */
+td > button:active {
+  transform: translateY(0);
+}
+
+
+/* 5. The rotation keyframes changing the angle */
+@keyframes spin-border {
+  to {
+    --angle: 360deg;
+  }
+}
